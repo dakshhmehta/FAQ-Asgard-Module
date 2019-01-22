@@ -41,7 +41,7 @@ class RegisterFaqSidebar implements \Maatwebsite\Sidebar\SidebarExtender
                 $item->icon('fa fa-copy');
                 $item->weight(10);
                 $item->authorize(
-                     /* append */
+                    /* append */
                 );
                 $item->item(trans('faq::faq.title.faqs'), function (Item $item) {
                     $item->icon('fa fa-copy');
@@ -53,7 +53,6 @@ class RegisterFaqSidebar implements \Maatwebsite\Sidebar\SidebarExtender
                     );
                 });
 // append
-
             });
         });
 

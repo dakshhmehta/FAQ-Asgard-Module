@@ -7,18 +7,17 @@ use Modules\Rarv\Form\Form;
 
 class FaqForm extends Form
 {
-	protected $repository = FaqRepository::class;
+    protected $repository = FaqRepository::class;
 
-	public function boot()
-	{
-		$this->setField('question', 'normalInput')
-			->setColumn(6)
-			->setLabel('Question:')
-			->setRules(['required']);
+    public function boot()
+    {
+        $this->setField('question', 'normalInput')
+            ->setColumn(6)
+            ->setLabel('Question:')
+            ->setRules(['required']);
 
-		$this->setField('answer', 'normalTextarea')
-			->setColumn(6)
-			->setRules(['required']);
-
-	}
+        $this->setField('answer', 'normalTextarea')
+            ->setColumn(6)
+            ->setRules(['required']);
+    }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Routing\Router;
+
 /** @var Router $router */
 
 $router->group(['prefix' =>'/faq'], function (Router $router) {
@@ -38,5 +39,4 @@ $router->group(['prefix' =>'/faq'], function (Router $router) {
         'middleware' => 'can:faq.faqs.destroy'
     ]);
 // append
-
 });

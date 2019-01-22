@@ -31,7 +31,6 @@ class FaqServiceProvider extends ServiceProvider
         $this->app['events']->listen(LoadingBackendTranslations::class, function (LoadingBackendTranslations $event) {
             $event->load('faq', array_dot(trans('faq::faq')));
             // append translations
-
         });
     }
 
@@ -67,6 +66,5 @@ class FaqServiceProvider extends ServiceProvider
             }
         );
 // add bindings
-
     }
 }
