@@ -22,7 +22,7 @@ class FaqHeadingTable extends Table
     	$addFaqBtn = new Button('Add FAQ', $url);
         
         // Its math x-axis value, lower the value to move to left side, 
-        // and higher the value to move to left. 
+        // and higher the value to move to right. 
         // Note: DeleteButton weight is 100.
         $addFaqBtn->weight=-1; 
 
