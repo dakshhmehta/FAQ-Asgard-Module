@@ -65,7 +65,7 @@ class FaqHeadingController extends AdminBaseController
      * @param  FaqHeading $faqheading
      * @return Response
      */
-    public function edit(FaqHeading $faqheading, FormBulder $builder)
+    public function edit(FaqHeading $faqheading, FormBuilder $builder)
     {
         return $builder->setMode('edit')->setForm(new FaqHeadingForm('faq.faqheading', $faqheading))->view();
     }

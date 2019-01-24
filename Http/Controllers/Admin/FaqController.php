@@ -24,7 +24,7 @@ class FaqController extends AdminBaseController
     {
         parent::__construct();
 
-        $this->faq = $faq;
+        $this->faq  = $faq;
         $this->form = new FaqForm('faq.faq');
     }
 
