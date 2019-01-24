@@ -52,7 +52,17 @@ class RegisterFaqSidebar implements \Maatwebsite\Sidebar\SidebarExtender
                         $this->auth->hasAccess('faq.faqs.index')
                     );
                 });
+                $item->item(trans('faq::faqheading.title.faqheadings'), function (Item $item) {
+                    $item->icon('fa fa-copy');
+                    $item->weight(0);
+                    $item->append('admin.faq.faqheading.create');
+                    $item->route('admin.faq.faqheading.index');
+                    $item->authorize(
+                        $this->auth->hasAccess('faq.faqs.index')
+                    );
+                });
 // append
+
             });
         });
 

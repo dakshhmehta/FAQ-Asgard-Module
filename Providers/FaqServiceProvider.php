@@ -30,7 +30,9 @@ class FaqServiceProvider extends ServiceProvider
 
         $this->app['events']->listen(LoadingBackendTranslations::class, function (LoadingBackendTranslations $event) {
             $event->load('faq', array_dot(trans('faq::faq')));
+            $event->load('faqheading', array_dot(trans('faq::faqheading')));
             // append translations
+
         });
     }
 
@@ -65,6 +67,19 @@ class FaqServiceProvider extends ServiceProvider
                 return new \Modules\Faq\Repositories\Cache\CacheFaqDecorator($repository);
             }
         );
+        $this->app->bind(
+            'Modules\Faq\Repositories\FaqHeadingRepository',
+            function () {
+                $repository = new \Modules\Faq\Repositories\Eloquent\EloquentFaqHeadingRepository(new \Modules\Faq\Entities\FaqHeading());
+
+                if (! config('app.cache')) {
+                    return $repository;
+                }
+
+                return new \Modules\Faq\Repositories\Cache\CacheFaqHeadingDecorator($repository);
+            }
+        );
 // add bindings
+
     }
 }

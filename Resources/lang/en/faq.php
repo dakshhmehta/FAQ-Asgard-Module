@@ -18,6 +18,7 @@ return [
         'columns' => [
             'question' => 'Question',
             'answer' => 'Answer',
+            'heading_label' => 'Heading',
         ]
     ],
     'form' => [

@@ -98,6 +98,6 @@ class FaqController extends AdminBaseController
         $this->faq->destroy($faq);
 
         return redirect()->route('admin.faq.faq.index')
-            ->withSuccess(trans('core::core.messages.resource deleted', ['name' => trans('faq::faqs.title.faqs')]));
+            ->withSuccess(trans('core::core.messages.resource deleted', ['name' => trans('faq::faq.title.faqs')]));
     }
 }

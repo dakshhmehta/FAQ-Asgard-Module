@@ -7,6 +7,4 @@ return [
         'edit' => 'faq::faqs.edit resource',
         'destroy' => 'faq::faqs.destroy resource',
     ],
-// append
-
 ];

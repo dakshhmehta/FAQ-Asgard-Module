@@ -38,5 +38,39 @@ $router->group(['prefix' =>'/faq'], function (Router $router) {
         'uses' => 'FaqController@destroy',
         'middleware' => 'can:faq.faqs.destroy'
     ]);
+    $router->bind('faqheading', function ($id) {
+        return app('Modules\Faq\Repositories\FaqHeadingRepository')->find($id);
+    });
+    $router->get('faqheadings', [
+        'as' => 'admin.faq.faqheading.index',
+        'uses' => 'FaqHeadingController@index',
+        'middleware' => 'can:faq.faqs.index'
+    ]);
+    $router->get('faqheadings/create', [
+        'as' => 'admin.faq.faqheading.create',
+        'uses' => 'FaqHeadingController@create',
+        'middleware' => 'can:faq.faqs.create'
+    ]);
+    $router->post('faqheadings', [
+        'as' => 'admin.faq.faqheading.store',
+        'uses' => 'FaqHeadingController@store',
+        'middleware' => 'can:faq.faqs.create'
+    ]);
+    $router->get('faqheadings/{faqheading}/edit', [
+        'as' => 'admin.faq.faqheading.edit',
+        'uses' => 'FaqHeadingController@edit',
+        'middleware' => 'can:faq.faqs.edit'
+    ]);
+    $router->put('faqheadings/{faqheading}', [
+        'as' => 'admin.faq.faqheading.update',
+        'uses' => 'FaqHeadingController@update',
+        'middleware' => 'can:faq.faqs.edit'
+    ]);
+    $router->delete('faqheadings/{faqheading}', [
+        'as' => 'admin.faq.faqheading.destroy',
+        'uses' => 'FaqHeadingController@destroy',
+        'middleware' => 'can:faq.faqs.destroy'
+    ]);
 // append
+
 });

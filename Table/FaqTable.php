@@ -11,7 +11,7 @@ class FaqTable extends Table
     protected $repository = FaqRepository::class;
 
     protected $columns = [
-        'question', 'answer',
+        'question', 'answer', 'heading_label'
     ];
 
     protected $filterForm = FaqFilterForm::class;
