@@ -11,7 +11,7 @@ class FaqHeadingTable extends Table
     protected $repository = FaqHeadingRepository::class;
 
     protected $columns = [
-        'label'
+        'thumbnail', 'label'
     ];
 
     public function prepareLinks()

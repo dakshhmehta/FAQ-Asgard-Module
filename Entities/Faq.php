@@ -14,6 +14,8 @@ class Faq extends Model
     public $translatedAttributes = [];
     protected $fillable = ['question', 'answer', 'heading_id'];
 
+    protected $perPage = 3;
+
     public function heading()
     {
     	return $this->belongsTo(FaqHeading::class, 'heading_id');

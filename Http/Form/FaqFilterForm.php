@@ -2,18 +2,18 @@
 
 namespace Modules\Faq\Http\Form;
 
-use Modules\Faq\Repositories\FaqRepository;
 use Modules\Rarv\Form\Form;
 
-class FaqFilterForm extends FilterForm
+class FaqFilterForm extends Form
 {
     public function boot()
     {
-        $this->setField('question', 'normalSelect', [Question::all()]);
-            ->setLabel('Question:');
+        $headingField = new SelectField('heading_id', FaqHeading::all()->pluck('label', 'id')->toArray());
+        $this->setField($headingField)
+            ->setLabel('Heading');
 
-        $this->setField('answer', 'normalInput')
-            ->setLabel('Answer:');
+        $this->setField('question', 'normalInput')
+            ->setLabel('Question');
     }
 
     public function handle($filters, $query)
