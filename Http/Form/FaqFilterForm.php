@@ -2,9 +2,12 @@
 
 namespace Modules\Faq\Http\Form;
 
-use Modules\Rarv\Form\Form;
+use Illuminate\Database\Eloquent\Builder;
+use Modules\Faq\Entities\FaqHeading;
+use Modules\Rarv\Form\Fields\SelectField;
+use Modules\Rarv\Form\FilterForm;
 
-class FaqFilterForm extends Form
+class FaqFilterForm extends FilterForm
 {
     public function boot()
     {
@@ -14,12 +17,5 @@ class FaqFilterForm extends Form
 
         $this->setField('question', 'normalInput')
             ->setLabel('Question');
-    }
-
-    public function handle($filters, $query)
-    {
-        // Nothing to do,
-        // It will automatically apply LIKE %{value}% foreach name in case of text field
-        // Or where in in case of dropdown
     }
 }
