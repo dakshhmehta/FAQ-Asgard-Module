@@ -12,7 +12,9 @@ class EloquentFaqHeadingRepository extends EloquentBaseRepository implements Faq
         $model = parent::create($data);
 
         if (isset($data['image'])) {
-            $model->filesByZone('image')->sync($data['image']);
+            $model->filesByZone('image')->sync([
+            	$data['image'] => ['zone' => 'image'],
+            ]);
         }
 
         return $model;
@@ -23,7 +25,12 @@ class EloquentFaqHeadingRepository extends EloquentBaseRepository implements Faq
         $model = parent::update($model, $data);
 
         if (isset($data['image'])) {
-            $model->filesByZone('image')->sync($data['image']);
+            $model->filesByZone('image')->sync([
+            	$data['image'] => ['zone' => 'image'],
+            ]);
+        }
+        else {
+        	$model->filesByZone('image')->sync([]); // Clear
         }
 
         return $model;
