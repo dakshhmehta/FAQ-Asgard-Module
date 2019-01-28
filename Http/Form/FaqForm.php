@@ -13,6 +13,8 @@ class FaqForm extends Form
 
     public function boot()
     {
+        $model = $this->getModel();
+
         $field = new SelectField('heading_id', FaqHeading::all()->pluck('label', 'id')->toArray());
         $this->setField($field)
             ->setLabel('Heading')
@@ -21,6 +23,17 @@ class FaqForm extends Form
         $this->setField('question', 'normalInput')
             ->setColumn(6)
             ->setLabel('Question:')
+            ->permission(function() use($model) {
+                // Configure the field to only editable in edit mode
+                // if at the time of creation, question is related 
+                // to Rarv module.
+
+                if($model){
+                    return strpos(strtolower($model->question), 'rarv') !== false;
+                }
+
+                return true;
+            })
             ->setRules(['required']);
 
         $this->setField('answer', 'normalTextarea')

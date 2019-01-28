@@ -13,9 +13,11 @@ class FaqFilterForm extends FilterForm
     {
         $headingField = new SelectField('heading_id', FaqHeading::all()->pluck('label', 'id')->toArray());
         $this->setField($headingField)
+            ->setColumn(3)
             ->setLabel('Heading');
 
         $this->setField('question', 'normalInput')
+            ->setColumn(3)
             ->setLabel('Question');
     }
 }

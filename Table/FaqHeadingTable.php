@@ -26,6 +26,10 @@ class FaqHeadingTable extends Table
         // Note: DeleteButton weight is 100.
         $addFaqBtn->weight=-1; 
 
+        $addFaqBtn->permission(function(){
+            return rand(0, 1) === 1; // Just random decision on permission
+        });
+
     	$this->addLink($addFaqBtn);
     }
 }
