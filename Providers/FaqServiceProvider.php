@@ -32,7 +32,6 @@ class FaqServiceProvider extends ServiceProvider
             $event->load('faq', array_dot(trans('faq::faq')));
             $event->load('faqheading', array_dot(trans('faq::faqheading')));
             // append translations
-
         });
     }
 
@@ -80,6 +79,5 @@ class FaqServiceProvider extends ServiceProvider
             }
         );
 // add bindings
-
     }
 }

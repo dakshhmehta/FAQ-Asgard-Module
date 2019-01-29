@@ -72,5 +72,4 @@ $router->group(['prefix' =>'/faq'], function (Router $router) {
         'middleware' => 'can:faq.faqs.destroy'
     ]);
 // append
-
 });

@@ -8,12 +8,12 @@ use Modules\Faq\Policies\FaqHeadingPolicy;
 
 class FaqPolicyServiceProvider extends AuthServiceProvider
 {
-	protected $policies = [
-		FaqHeading::class => FaqHeadingPolicy::class,
-	];
+    protected $policies = [
+        FaqHeading::class => FaqHeadingPolicy::class,
+    ];
 
-	public function boot()
-	{
-		$this->registerPolicies();
-	}
+    public function boot()
+    {
+        $this->registerPolicies();
+    }
 }

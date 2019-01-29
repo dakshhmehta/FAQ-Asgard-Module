@@ -13,7 +13,7 @@ class EloquentFaqHeadingRepository extends EloquentBaseRepository implements Faq
 
         if (isset($data['image'])) {
             $model->filesByZone('image')->sync([
-            	$data['image'] => ['zone' => 'image'],
+                $data['image'] => ['zone' => 'image'],
             ]);
         }
 
@@ -26,11 +26,10 @@ class EloquentFaqHeadingRepository extends EloquentBaseRepository implements Faq
 
         if (isset($data['image'])) {
             $model->filesByZone('image')->sync([
-            	$data['image'] => ['zone' => 'image'],
+                $data['image'] => ['zone' => 'image'],
             ]);
-        }
-        else {
-        	$model->filesByZone('image')->sync([]); // Clear
+        } else {
+            $model->filesByZone('image')->sync([]); // Clear
         }
 
         return $model;

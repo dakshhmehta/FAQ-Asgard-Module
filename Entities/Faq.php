@@ -18,11 +18,11 @@ class Faq extends Model
 
     public function heading()
     {
-    	return $this->belongsTo(FaqHeading::class, 'heading_id');
+        return $this->belongsTo(FaqHeading::class, 'heading_id');
     }
 
     public function getHeadingLabelAttribute($value)
     {
-    	return $this->heading->label;
+        return $this->heading->label;
     }
 }

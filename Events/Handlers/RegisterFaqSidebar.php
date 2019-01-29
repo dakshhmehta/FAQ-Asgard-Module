@@ -62,7 +62,6 @@ class RegisterFaqSidebar implements \Maatwebsite\Sidebar\SidebarExtender
                     );
                 });
 // append
-
             });
         });
 

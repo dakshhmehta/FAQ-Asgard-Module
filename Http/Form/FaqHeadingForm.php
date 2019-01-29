@@ -12,9 +12,9 @@ class FaqHeadingForm extends Form
 
     public function boot()
     {
-    	$imageField = new SingleMediaField('image');
-    	$this->setField($imageField)
-    		->setLabel('Image');
+        $imageField = new SingleMediaField('image');
+        $this->setField($imageField)
+            ->setLabel('Image');
 
         $this->setField('label', 'normalInput')
             ->setLabel('Label')
