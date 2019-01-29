@@ -10,6 +10,8 @@ class FaqHeadingTable extends Table
 {
     protected $repository = FaqHeadingRepository::class;
 
+    protected $policy = FaqHeadingPolicy::class;
+
     protected $columns = [
         'thumbnail', 'label'
     ];
@@ -26,9 +28,7 @@ class FaqHeadingTable extends Table
         // Note: DeleteButton weight is 100.
         $addFaqBtn->weight=-1; 
 
-        $addFaqBtn->permission(function(){
-            return rand(0, 1) === 1; // Just random decision on permission
-        });
+        $addFaqBtn->setPolicy('addFaq');
 
     	$this->addLink($addFaqBtn);
     }

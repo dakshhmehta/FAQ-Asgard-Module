@@ -8,7 +8,8 @@
     "order": 1,
     "providers": [
         "Modules\\Faq\\Providers\\FaqServiceProvider",
-        "Modules\\Faq\\Providers\\RouteServiceProvider"
+        "Modules\\Faq\\Providers\\RouteServiceProvider",
+        "Modules\\Faq\\Providers\\FaqPolicyServiceProvider"
     ],
     "aliases": {},
     "files": [
