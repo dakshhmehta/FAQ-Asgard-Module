@@ -61,7 +61,7 @@ class RegisterFaqSidebar implements \Maatwebsite\Sidebar\SidebarExtender
                         $this->auth->hasAccess('faq.faqs.index')
                     );
                 });
-// append
+                // append
             });
         });
 

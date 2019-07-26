@@ -71,5 +71,5 @@ $router->group(['prefix' =>'/faq'], function (Router $router) {
         'uses' => 'FaqHeadingController@destroy',
         'middleware' => 'can:faq.faqs.destroy'
     ]);
-// append
+    // append
 });

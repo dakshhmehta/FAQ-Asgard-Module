@@ -78,6 +78,6 @@ class FaqServiceProvider extends ServiceProvider
                 return new \Modules\Faq\Repositories\Cache\CacheFaqHeadingDecorator($repository);
             }
         );
-// add bindings
+        // add bindings
     }
 }
