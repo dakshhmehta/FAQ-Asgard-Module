@@ -42,7 +42,9 @@ class RegisterFaqSidebar implements \Maatwebsite\Sidebar\SidebarExtender
                 $item->weight(10);
                 $item->authorize(
                     /* append */
+                    $this->auth->hasAccess('faq.faqs.index')
                 );
+
                 $item->item(trans('faq::faq.title.faqs'), function (Item $item) {
                     $item->icon('fa fa-copy');
                     $item->weight(0);
