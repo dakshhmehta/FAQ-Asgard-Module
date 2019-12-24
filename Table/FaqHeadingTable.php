@@ -13,20 +13,20 @@ class FaqHeadingTable extends Table
     protected $policy = FaqHeadingPolicy::class;
 
     protected $columns = [
-        'thumbnail', 'label'
+        'thumbnail', 'label',
     ];
 
     public function prepareLinks()
     {
         parent::prepareLinks();
 
-        $url = route('admin.faq.faq.create').'?heading_id=##id##';
+        $url       = route('admin.faq.faq.create') . '?heading_id=##id##';
         $addFaqBtn = new Button('Add FAQ', $url);
-        
+
         // Its math x-axis value, lower the value to move to left side,
         // and higher the value to move to right.
         // Note: DeleteButton weight is 100.
-        $addFaqBtn->weight=-1;
+        $addFaqBtn->weight = -1;
 
         $addFaqBtn->setPolicy('addFaq');
 

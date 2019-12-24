@@ -20,7 +20,7 @@ class FaqTable extends Table
             'question',
             'answer',
             'heading_label' => function ($row) {
-                return $row->heading->label . ' ('.$row->heading->id.')';
+                return $row->heading->label . ' (' . $row->heading->id . ')';
             },
         );
     }
