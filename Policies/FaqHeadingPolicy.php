@@ -6,6 +6,6 @@ class FaqHeadingPolicy
 {
     public function addFaq($user, $model)
     {
-        return rand(0, 1) == 1;
+        return ($model->id % 2) == 0;
     }
 }
