@@ -16,7 +16,7 @@ class FaqHeadingForm extends Form
         $this->setField($imageField)
             ->setLabel('Image');
 
-        $this->setField('label', 'normalInput')
+        $this->setField('label', 'textGroup')
             ->setLabel('Label')
             ->setRules(['required']);
     }

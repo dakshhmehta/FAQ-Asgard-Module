@@ -20,9 +20,4 @@ class Faq extends Model
     {
         return $this->belongsTo(FaqHeading::class, 'heading_id');
     }
-
-    public function getHeadingLabelAttribute($value)
-    {
-        return $this->heading->label;
-    }
 }

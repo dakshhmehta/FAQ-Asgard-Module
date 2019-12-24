@@ -10,9 +10,18 @@ class FaqTable extends Table
 {
     protected $repository = FaqRepository::class;
 
-    protected $columns = [
-        'question', 'answer', 'heading_label'
-    ];
+    protected $columns = [];
 
     protected $filterForm = FaqFilterForm::class;
+
+    public function getColumns()
+    {
+        return array(
+            'question',
+            'answer',
+            'heading_label' => function ($row) {
+                return $row->heading->label . ' ('.$row->heading->id.')';
+            },
+        );
+    }
 }

@@ -17,10 +17,11 @@ class FaqForm extends Form
 
         $field = new SelectField('heading_id', FaqHeading::all()->pluck('label', 'id')->toArray());
         $this->setField($field)
+            ->setParameters(['icon' => 'cog'])
             ->setLabel('Heading')
             ->setRules(['required']);
 
-        $this->setField('question', 'normalInput')
+        $this->setField('question', 'textGroup')
             ->setColumn(6)
             ->setLabel('Question:')
             ->permission(function () use ($model) {
