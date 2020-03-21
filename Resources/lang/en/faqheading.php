@@ -16,6 +16,7 @@ return [
     ],
     'table' => [
         'columns' => [
+            'thumbnail' => 'Thumbnail',
             'label' => 'Label',
         ]
     ],

@@ -4,6 +4,7 @@ namespace Modules\Faq\Table;
 
 use Modules\Faq\Repositories\FaqHeadingRepository;
 use Modules\Rarv\Button\Button;
+use Modules\Rarv\Table\ExportTable;
 use Modules\Rarv\Table\Table;
 
 class FaqHeadingTable extends Table
@@ -15,6 +16,13 @@ class FaqHeadingTable extends Table
     protected $columns = [
         'thumbnail', 'label',
     ];
+
+    protected $exportable = true;
+
+    public function toExportable(): ?ExportTable
+    {
+        return new FaqHeadingExportTable($this);
+    }
 
     public function prepareLinks()
     {
