@@ -9,9 +9,10 @@ class EloquentFaqRepository extends EloquentBaseRepository implements FaqReposit
 {
     public function create($data)
     {
-        if (isset($data['heading_id'])) {
-            $data['heading_id'] = $data['heading_id']->heading_id;
-        }
+        // if (isset($data['heading_id'])) {
+        //     dd($data['heading_id']);
+        //     $data['heading_id'] = $data['heading_id']->heading_id;
+        // }
 
         return parent::create($data);
     }
