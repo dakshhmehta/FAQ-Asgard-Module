@@ -29,8 +29,8 @@ class FaqServiceProvider extends ServiceProvider
         $this->app['events']->listen(BuildingSidebar::class, RegisterFaqSidebar::class);
 
         $this->app['events']->listen(LoadingBackendTranslations::class, function (LoadingBackendTranslations $event) {
-            $event->load('faq', array_dot(trans('faq::faq')));
-            $event->load('faqheading', array_dot(trans('faq::faqheading')));
+            $event->load('faq', \Arr::dot(trans('faq::faq')));
+            $event->load('faqheading', \Arr::dot(trans('faq::faqheading')));
             // append translations
         });
     }
